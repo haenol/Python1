@@ -1,0 +1,66 @@
+---------------------------------------------드림코딩---------------------------------------------
+- 터미널, 소스트리 병행
+
+1. 터미널 환경설정: 윈도우는 cmder 설치
+**tip. 터미널에서 텍스트 편집이 불편하다면 VS Code* 연결 /vvv해결vvv
+(*VS code는 에디터, visual studio는 IDE. 모든 기능을 갖추고 있는 통합 개발 환경, 무거움)
+- VS Code 설정(Ctrl+,)에서 'shell command' 검색해서 code. 어쩌고 체크하면 되는데
+- 아무리 찾아도 안보임......... 검색해도 안나왔는데 문득 최신 버전에는 기존에 있을지도 모른다는 생각이 들어서 
+- cmder에서 걍 code . 해보니까 되넹,,^-^ 시간 넘아깝지만 생각해낸게 어디야,,,라고 생각하기
+ 
+ > cd: 터미널 명령어. 디렉토리 들어가는 명령어.
+ > mkdir: 터미널 명령어. 해당 디렉토리에서 새 폴더를 생성. 
+ > git init: 들어간 폴더에서 초기화를 해줌 ---> git 폴더 생성(기본 branch=master)
+ > ls -al: 터미널". 해당 폴더의 파일 확인
+ > cd ..: 터미널". 해당 폴더 나가기
+ - git폴더는 git의 근본임. 수정사항과 버전을 모두 추적하고 저장해주는 그런 친구
+ > rm -rf .git: git 삭제
+ > git status: git 상태확인
+**tip. git config --global alias.st status: 반복적으로 사용하는 명령어(status) 단축키(st) 사용설정
+**tip. git 명령어(config) --h: 해당 명령어에서 사용할 수 있는 속성값들 확인
+
+2. Git Workflow (작업환경)
+(이론)
+<local(PC)> (->push를 통해 remote로)
+1) working directory: 프로젝트 파일 작업공간
+ .1 untracked: 새 파일, 초기화된 파일
+ .2 tracked(unmodified/modified): git이 이미 알고 있고 추적하고 있는 파일
+    modified 파일만 2)로 갈 수 있음
+2) staging area: 작업 중 버전 히스토리에 저장할 파일 (->commit을 통해 3)으로)
+3) .git directory: (commit을 통해)버전의 히스토리 (->checkout을 통해 1)로)
+<remote(Server)> (->pull을 통해 local로)
+
+- 버전 상세정보
+각각의 커밋에는 스냅샷된 정보를 기반으로 고유한 해시코드 부여--->버전 정보 참조가능
+어떤 버전인지, 누가 작성, 날짜, 시간 정보 포함
+
+(실습)
+> git status
+On branch master ---> master branch에서 작업중
+No commits yet ---> 아직 커밋된 것 없음
+Untracked files: --->untracked 파일 세 개
+  (use "git add <file>..." to include in what will be committed)
+        Section01/
+        Section02/
+        SourceTree_memo.txt
+nothing added to commit but untracked files present (use "git add" to track)
+--->아직 커밋 파일이 없지만 untracked 파일을 "git add"를 통해 track할 수 있음
+ >git add ~: ~파일은 staging area에 속함
+ >git add *.txt: 특정 확장자로 끝나는 모든 파일 추가
+ >추가된 파일 중 수정사항 발생--->1) tracked(modified)에 속함
+ >git rm --cached . : 파일을 다시 untracked상태로
+ >echo ~ > .gitignore: git에 추가하고 싶지 않은 파일을 gitignore폴더로
+**tip. (파일설정) a.txt: 특정 파일 설정
+	*.log: 특정 확장자의 모든 파일
+	build/: 특정 디렉토리 안의 모든 파일
+	build/*.log: 특정 디렉토리 안 특정 확장자의 모든 파일
+ >git status -h: status 도움말
+ >Ctrl+k: terminal clear
+ >git status -s: 간단한 상태창 확인---> A(add)M(odified)
+ >git diff: 수정된 text 확인...인데 걍 소스트리에서 걍 보면 될듯(일단생략)
+(edit하는 게 있어서 앞에 환경설정 다시 제대로 해주고 왔음.  
+-e할 때 터미널 나왔는데 저장하는 법을 몰라서 설정 다시해서 -e하면 VScode나옴)
+>git difftool을 통해 vscode로 가서 수정된 text확인 할 수 있음
+
+3. 커밋
+>git commit
