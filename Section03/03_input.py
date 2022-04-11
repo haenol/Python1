@@ -8,4 +8,3 @@ print(type(name))                    # input함수로 입력받은 데이터는 
 num = int(input('숫자 하나 입력 : '))
 print(f'입력된 숫자{num}', type(num))
 
-

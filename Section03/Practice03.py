@@ -24,9 +24,9 @@ print(f'{e}: {english_dict[e]}')
 '''
 # 4. 원하는 장소를 입력받아 "동일한 입력은 무시"하고 모든 입력 저장. 학생 3명, 실행 예처럼 구현 => set
 place = {}
-place = input('희망하는 수학여행지를 입력하세요 >>> ')
-place = input('희망하는 수학여행지를 입력하세요 >>> ')
-place = input('희망하는 수학여행지를 입력하세요 >>> ')
+place.add(input('희망하는 수학여행지를 입력하세요 >>> '))
+place.add(input('희망하는 수학여행지를 입력하세요 >>> '))
+place.add(input('희망하는 수학여행지를 입력하세요 >>> '))
 l_place = list(place)
 print(f'조사된 수학여행지는 {l_place}입니다.')
 # 작업중 (3/24듣는중)
