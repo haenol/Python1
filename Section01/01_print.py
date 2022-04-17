@@ -7,6 +7,7 @@
     한 줄 주석: Ctrl + /
     작성 중에 다음 줄로 이동: Shift + Enter
     ''안의 내용 모두 삭제: Ctrl + backspace
+    왼쪽으로 탭: Shift + tab
 """
 
 '''

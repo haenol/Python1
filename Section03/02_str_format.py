@@ -1,13 +1,12 @@
 name = '홍길동'
 age = 20
 
-# format 함수
+# format() 함수 (p.59)
 msg1 = '이름 : {}\t\t나이 : {}'.format(name, age)       # %연산자가 {}이 된 느낌
 # msg1 = '이름 : {0}\t\t나이 : {1}'.format(name, age)
 # msg1 = '이름 : {1}\t\t나이 : {0}'.format(name, age)
 print(msg1)
-
-# 3.6 버전 이상: 변수명 바로 넣기
+# 3.6 버전 이상: 변수명 바로 넣기. + f-strings
 msg2 = f'이름 : {name}\t\t나이 : {age}'
 print(msg2)
 
