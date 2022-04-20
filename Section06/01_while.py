@@ -12,7 +12,7 @@
 i = 0           # 초기값
 while i < 5:    # 조건식
     print('Hellow World')
-    i += 1      # 증감값
+    i += 1      # 증감식
 
 # 02_Ex06_2
 my_list = []
